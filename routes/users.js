@@ -126,18 +126,5 @@ router.put('/', async (req, res) => {
     }
   }
 });
-router.put('/hh', async (req, res) => {
-  Balance.findOne({
-    include: User,
-    where: { User: { username: 'user1' } },
-  }).then(
-    (user) => {
-      res.json(user);
-    },
-    (err) => {
-      res.json(err);
-    }
-  );
-});
 
 module.exports = router;
